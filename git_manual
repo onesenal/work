@@ -1,0 +1,13 @@
+# git_connect
+git init
+git add [file.name]
+git branch -M [branch.name]
+git commit -m "[commit.name]"
+git remote add orgin [git_repository.url]
+git push -u origin main
+
+# git_push
+git pull origin main
+git add [file.name]
+git commit -m "[commit.name]"
+git push -u origin main
