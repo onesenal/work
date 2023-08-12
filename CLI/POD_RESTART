@@ -1,7 +1,7 @@
 # POD_RESTART
 
 # POD_Delete
-1 or 2
+Select 1 or 2
 1. kubectl scale deploy --replicas=0 --all -n [namespace.name]
 2. kubectl delet pod [pod.name] -n [namespace.name]
 
