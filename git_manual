@@ -1,6 +1,6 @@
 # git_connect
 git init
-git add [file.name]
+git add [file.location]
 git branch -M [branch.name]
 git commit -m "[commit.name]"
 git remote add orgin [git_repository.url]
