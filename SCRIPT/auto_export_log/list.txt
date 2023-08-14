@@ -1,0 +1,12 @@
+release-management
+au-repository-service
+au-entity-search-service
+dispatcher-service
+business-request-service
+product-offering-service
+rt-generic-element
+rt-price-details
+rt-catalog-rule-engine-service
+price-pricing
+promotion-qualification
+rule-engine-repository-service
