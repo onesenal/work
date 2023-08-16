@@ -1,0 +1,18 @@
+# 실시간으로 파드 상태 확인
+watch -n 0 -d "kubectl get pod -A"
+
+# 파드 상태 확인
+kubectl get pod -A
+kubectl get pod -n [namespace.name]
+
+# 파드 로그 확인
+kubectl logs [pod.name] -A
+kubectl logs [pod.name] -n [namespace.name]
+
+# Ingress 확인
+kubectl get ingress -A
+kubectl get ingress -n [namespace.name]
+
+# PVC 리소스 확인
+kubectel get pvc -A
+kubectel get pvc -n [namespace.name]
