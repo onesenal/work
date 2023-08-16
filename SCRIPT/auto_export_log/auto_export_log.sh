@@ -27,7 +27,7 @@ while read -r line; do
         kubectl logs "$pod_name" -n "$namespace" >> "$log_file"
     done
 
-    # 여기에 각 줄에 대한 추가 작업을 수행하세요
+    # 여기에 각 줄에 대한 추가 작업을 수행
 done < "$file_path"
 
 tar -cvzf $(date +%m%d).tar.gz ./export_log/*

@@ -1,0 +1,12 @@
+# Helm Chart List 조회(helm_release.name 출력)
+helm ls -A
+
+# helm package에서 원하는 값 검색 
+helm get values -n [namespace.name] [helm_release.name] | grep [search.value]
+
+# yaml 파일 생성
+helm get values -n [namespace.name] [helm_release.name] > [yamlfile.name]
+vim [yamlfile.name]
+
+# Helm chart upgrade
+helm upgrade -n [namespace.name] [helm_release.name] [helm_package.name & version] --values [yamlfile.name]
