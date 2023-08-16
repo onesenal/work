@@ -31,4 +31,4 @@ while read -r line; do
 done < "$file_path"
 
 tar -cvzf $(date +%m%d).tar.gz ./export_log/*
-curl -v -u psmdocker:PCadmin@00 --upload-file *.tar.gz http://172.31.66.8:8081/repository/jenkins1/cho/export_log
+curl -v -u [Nexus_repo.id]:[Nexus_repo.passwd] --upload-file *.tar.gz [Nexus_repo_file_location_url]
