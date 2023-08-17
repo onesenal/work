@@ -2,6 +2,8 @@
 git init
 git add [file.location]
 git branch -M [branch.name]
+git config --global user.email "[user.email]"
+git config --global user.name "[user.name]"
 git commit -m "[commit.name]"
 git remote add orgin [git_repository.url]
 git push -u origin main
