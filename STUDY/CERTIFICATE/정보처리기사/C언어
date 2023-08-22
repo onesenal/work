@@ -1,0 +1,43 @@
+#define AA 5
+#define BB AA +4
+y=AA*BB
+ =AA*AA+4
+ =5*5+4 
+ =29
+
+a=2; 
+b=5*++a;
+
+a=2;
+b=5*a++;
+
+int main() {
+    
+    int a;
+    double b;
+
+    a=10;
+    b=3;
+    printf("a/b는 : %f\n",a/b);
+    printf("a/b는 : %f\n",a/b);
+
+    return 0;   
+    
+}
+
+#include<stdio.h>
+
+int main() {
+
+    int i = 100, j = 200;
+
+    printf("i : %d, j : %d \n", ++i, j++);
+    printf("i : %d, j : %d \n", i, j);
+    printf("i : %d, j : %d \n", --i, j--);
+    printf("i : %d, j : %d \n", i, j);
+
+    printf("i : %d, j : %d\n", i, j);
+
+    return 0;
+
+}
