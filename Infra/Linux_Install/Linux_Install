@@ -1,0 +1,45 @@
+# Linux용 Windows 하위 시스템 체크
+Window key > Window 기능 켜기/끄기 입력 > Linux용 Windows 하위 시스템 체크박스 
+
+# 개발자 모드 설정
+Window key > 설정 > 개인 정보 및 보안 > 개발자용 > 개발자 모드 켬 > 컴퓨터 재시작
+
+# Windows 업데이트
+Window key > 설정 > Windows 업데이트 > 업데이트 확인 클릭
+
+# PowerShell 실행
+Window key > PowerShell 검색 > 관리자 권한 실행
+
+# WSL 시스템 활성화
+코드입력 
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+# Linux 커널 업데이트 패키지 실행
+폴더 안의 wsl_update_x64.msi 실행
+
+# WSL 2 기본 버전 세팅
+PowerShell 에서 command 입력
+wsl --set-default-version 2
+
+*하기와 같은 error message가 발생했을 경우
+가상 머신 플랫폼 Windows 기능을 사용하도록 설정하고 BIOS에서 가상화를 사용하도록 설정했는지 확인하세요.
+자세한 내용은 https://aka.ms/enablevirtualization을 참조하세요.
+
+PowerShell 에서 command 입력후 재부팅
+bcdedit /set hypervisorlaunchtype auto
+
+# Ubuntu 설치
+Microsoft Store 에서 Ubuntu 설치
+
+*하기와 같은 error message가 발생했을 경우
+WslRegisterDistribution failed with error: 0x80370102
+Please enable the Virtual Machine Platform Windows feature and ensure virtualization is enabled in the BIOS.
+
+# 가상 머신 플랫폼 기능 켜기
+Window key > Window 기능 켜기/끄기 입력 > 가상 머신 플랫폼 기능 켜기후 재시작
+
+# HiperV 기능 켜기
+Window key > Window 기능 켜기/끄기 입력 > HiperV 기능 켜기
+
+# VScode 와 연동
+Ubuntu 실행 후 code . 입력 
