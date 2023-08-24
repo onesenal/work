@@ -1,0 +1,5 @@
+# 여러 줄 한 줄로 변경
+1. control + h 클릭
+2. alt + R 눌러 정규표현식으로 변경
+3. find에 해당하는 란에 \n 기입
+4. control + alt + enter
