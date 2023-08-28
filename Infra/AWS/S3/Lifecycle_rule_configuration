@@ -1,0 +1,47 @@
+# S3 bucket Lifecycle rule configuration
+AWS 접속 및 로그인
+S3 클릭
+삭제주기 설정할 버킷 클릭
+Management 클릭
+Lifecycle rules > Create lifecycle rule 클릭
+# Create lifecycle rule
+    Lifecycle rule name 설정
+    # 필터 유형 설정(빈 칸으로 둘 수 없음. 필터링할 필요가 없는 경우 임의의 값 입력, 단 버킷명과 겹치면 문제가 발생)
+    Prefix 설정
+    Choose a rule scope 설정
+        # 두 가지 옵션 중 하나 선택
+        Limit the scope of this rule using one or more filters
+        Apply to all object in the bucket
+            해당 버킷의 모든 파일에 적용하기 위해 해당 옵션 선택
+            I acknowledge that this rule will apply to all objects in the bucket에 해당하는 체크박스 클릭
+    # 주기 설정
+    Lifecycle rule actions
+        # 버전이 지정되어 있지 않은 버킷의 경우 Amazon S3는 객체를 영구적으로 제거
+        Expire current versions of objects
+            # object 생성일 이후 만료 날짜 설정
+            Days after object creation
+        # 객체의 이전 버전 영구적 삭제
+        Permanently delete noncurrent versions of objects
+            # 이전 버전 이후 만료 날짜 설정
+            Days after objects become noncurrent
+        Delete expired object delete markers or incomplete multipart uploads
+                # 불완전한 멀리파트 업로드 파일 삭제
+                Delete incomplete multipart uploads
+                    # 만료 날짜 설정
+                    Number of days
+# 추가 lifecycle rule 생성
+Lifecycle rules > Create lifecycle rule 클릭
+    Lifecycle rule name 설정
+    # 필터 유형 설정(빈 칸으로 둘 수 없음. 필터링할 필요가 없는 경우 임의의 값 입력, 단 버킷명과 겹치면 문제가 발생)
+    Prefix 설정
+    Choose a rule scope 설정
+        # 두 가지 옵션 중 하나 선택
+        Limit the scope of this rule using one or more filters
+        Apply to all object in the bucket
+            해당 버킷의 모든 파일에 적용하기 위해 해당 옵션 선택
+            I acknowledge that this rule will apply to all objects in the bucket에 해당하는 체크박스 클릭
+    # 주기 설정
+    Lifecycle rule actions
+        Delete expired object delete marker or incomplete multipart uploads
+            # 위의 lifecycle rule에서 만료된 파일을 삭제하는 marker 생성
+            Delete expired object delete markers 체크박스 클릭
