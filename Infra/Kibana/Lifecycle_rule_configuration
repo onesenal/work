@@ -1,0 +1,70 @@
+# Kibana v7.10.2
+# Policy Create
+Index Management 클릭
+    State management policies 클릭
+        Create policy 클릭
+        {
+            "policy_id": "[policy.name]",
+            "description": "Policy to maintain [env] logging index",
+            "last_updated_time": 1693892251092,
+            "schema_version": 1,
+            "error_notification": null,
+            "default_state": "current",
+            "states": [
+                {
+                    "name": "current",
+                    "actions": [],
+                    "transitions": [
+                        {
+                            "state_name": "old",
+                            "conditions": {
+                                "min_index_age": "7d"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "old",
+                    "actions": [
+                        {
+                            "replica_count": {
+                                "number_of_replicas": 0
+                            }
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "state_name": "delete",
+                            "conditions": {
+                                "min_index_age": "11d"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "delete",
+                    "actions": [
+                        {
+                            "delete": {}
+                        }
+                    ],
+                    "transitions": []
+                }
+            ],
+            "ism_template": [
+                {
+                    "index_patterns": [
+                        "[index_patterns_01]",
+                        "[index_patterns_02]"
+                    ],
+                    "priority": 0,
+                    "last_updated_time": 1677219384697
+                }
+            ]
+        }
+        Create 클릭
+# Lifecycle Configuration
+Index Management 클릭
+        Indices 클릭
+            원하는 Index들을 선택한 후 Apply policy를 클릭
+            위에서 설정한 policy를 선택한 후 Apply 클릭

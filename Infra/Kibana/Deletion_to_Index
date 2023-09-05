@@ -1,0 +1,4 @@
+# Deletion to Index
+Management 클릭
+    Dev Tools 클릭
+        DELETE /[index.name]
