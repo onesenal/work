@@ -2,3 +2,5 @@
 Management 클릭
     Dev Tools 클릭
         DELETE /[index.name]
+
+출처: https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-delete-index.html
