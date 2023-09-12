@@ -18,4 +18,4 @@ kubectel get pvc -A
 kubectel get pvc -n [namespace.name]
 
 # 파드 CPU 및 메모리 확인
-kubectel get pod [pod.name] -n [namespace.name]
+kubectel get top pod [pod.name] -n [namespace.name]
