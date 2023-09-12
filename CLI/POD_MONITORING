@@ -16,3 +16,6 @@ kubectl get ingress -n [namespace.name]
 # PVC 리소스 확인
 kubectel get pvc -A
 kubectel get pvc -n [namespace.name]
+
+# 파드 CPU 및 메모리 확인
+kubectel get pod [pod.name] -n [namespace.name]
