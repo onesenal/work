@@ -19,3 +19,9 @@ kubectel get pvc -n [namespace.name]
 
 # 파드 CPU 및 메모리 확인
 kubectel get top pod [pod.name] -n [namespace.name]
+
+# 파드 안의 컨테이너 접속
+kubectel exec -it [pod.name] -n [namespace.name] -- /bin/bash
+    - 컨테이너가 하나가 아닌 여러 개가 있는 파드를 접속하려고 하면 에러 메세지가 발생
+    - 에러 메세지에서 컨테이너 명을 확인
+kubectel exec -it [pod.name] -n [namespace.name] -c [container.name] -- /bin/bash
