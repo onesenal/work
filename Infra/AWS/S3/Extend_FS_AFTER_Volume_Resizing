@@ -1,0 +1,17 @@
+# EBS 볼륨 확장
+    EC2 > Volume에서 [Volume.name] 검색
+    [Volume.ID] 클릭
+    우측 상단 Modify 클릭
+    Size(GiB)를 원하는 크기로 변경 후 Modify 클릭
+# FS(File System) 확장
+	lsblk 명령어를 통해 불륨에 파티션이 있는지 확인
+    볼륨에 파티션이 있으면 다음 단계의 절차를 계속 진행(단, 볼륨에 파티션이 없으면 다음 단계를 건너뛰고 3단계의 절차를 계속 진행)
+    # 확장할 파티션 지정
+    sudo growpart /dev/nvme0n1 1
+    lsblk 명령어를 통해 불륨이 확장되었는지 확인
+    # FS 확장
+    df -hT 명령어를 통해 파일시스템의 유형과 파일 크기를 확인
+    [XFS FS일 경우] sudo xfs_growfs -d /
+	[Ext4 FS일 경우] sudo resize2fs /dev/nvme0n1p1
+
+출처 : https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html
