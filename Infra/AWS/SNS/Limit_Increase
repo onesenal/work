@@ -1,0 +1,22 @@
+# Limit Increase Request
+    AWS Console 접속
+    Support 검색
+    Create case 클릭
+    "Looking for service limit increase?" 클릭
+        Limit type : SNS Text Messaging
+        Region : Asia Pacific(Tokyo) > 한국은 SMS 서비스를 지원하지 않음.
+        Resource Type :  General Limits
+        Limit : Account Spend Threshold Increase for SMS
+        New limit value : 10 > 기본값이 1이며, 단위는 달러이기 때문에 1 초과하면 1,000 달러로 설정함. 한도는 나중에 쉽게 수정할 수 있으므로 상관없음.
+        Case description
+        ex)
+            -- Which AWS region will the user be calling our API/service from: Asia Pacific (Tokyo) ap-northeast-1 
+            -- The dollar limit requested: 1,000 dollar 
+            -- Link of site or app that will be sending SMS: SMS를 보낼 앱이나 사이트 주소
+            -- Type of message (transactional/promotional/one-time password): alarm 
+            -- Details of your opt-in process and any other ways in which you ensure you are only sending to people who have requested your messages: 
+            -- A list of countries in which the recipients of your messages are located: Korea (Seoul) 
+            -- The maximum number of messages you expect to send per day: 100 
+            -- Message templates you plan to send: not determined 
+            I look forward to hearing from you. 
+            Thank you and best regards,
