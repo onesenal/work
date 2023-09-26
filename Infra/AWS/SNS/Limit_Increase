@@ -20,3 +20,8 @@
             -- Message templates you plan to send: not determined 
             I look forward to hearing from you. 
             Thank you and best regards,
+        + add)
+            -- Details of your opt-in process and any other ways in which you ensure you are only sending to people who have requested your messages: 
+                We plan to deliver alert messages only to the phone numbers registered through Python source code. Since it will be limited to specific administrators, a minimum of 2 and a maximum of 8 registered numbers will be allowed for receiving alerts.
+            -- Any additional information that would help us better understand your use case:
+                Monitoring alarm service of grafana
