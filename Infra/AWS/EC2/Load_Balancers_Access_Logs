@@ -1,0 +1,13 @@
+# S3 Bucket Create
+    Access logs를 저장할 S3 Bucket 생성
+
+# Configuration
+    AWS Console 접속 > Loadbalancing > Loadbalancers
+    Access Logs가 필요한 Loadbalancer 클릭
+    Attributes 클릭 후 Edit 
+        Monitoring 에서 Access logs 활성화 
+        S3 URI 에 Access logs 저장 위치 설정 
+        Save changes
+
+# S3 Bucket Create
+    Onesenal/SCRIPT/auto_alb_logs_allign 스크립트 참조
