@@ -9,5 +9,19 @@
         S3 URI 에 Access logs 저장 위치 설정 
         Save changes
 
+# S3 Bucket Policy 
+(예시)
+{ "Version": "2012-10-17", 
+    "Statement": [ 
+        { 
+        "Effect": "Allow", 
+        "Principal": { 
+        "AWS": "arn:aws:iam::ALBAccountId:root" 
+        }, 
+        "Action": "s3:PutObject", "Resource": 
+        "arn:aws:s3:::YourBucketName/AWSLogs/YourAWSAccountID/*" }
+    ]
+}
+
 # S3 Bucket Create
     Onesenal/SCRIPT/auto_alb_logs_allign 스크립트 참조
