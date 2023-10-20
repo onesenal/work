@@ -12,8 +12,7 @@ MONTH=$(date -d "$TSTMP" +%m)
 #MONTH=09
 DAY=$(date -d "$TSTMP" +%d)
 #DAY=05
-TIME=$(date -d "$TSTMP" +%H%M)
-HOUR=$(date -d "$TSTMP" +%H)
+
 #AUTH
 # ex) Script 위치: /var/lib/jenkins/cho/uat_c/artifact_logs/
 rm -rf /var/lib/jenkins/cho/uat_c/artifact_logs/[directory1]/[directory2]
@@ -21,6 +20,10 @@ mkdir /var/lib/jenkins/cho/uat_c/artifact_logs/[directory1]/[directory2]
 cd /var/lib/jenkins/cho/uat_c/artifact_logs/[directory1]/[directory2]
 
 aws s3 cp s3://[bucket.name]/[directory.name]/AWSLogs/072551541449/elasticloadbalancing/ap-northeast-2/${YEAR}/${MONTH}/${DAY} . --recursive
+
+# 원하는 시간대 설정하여 해당 로그를 추출
+rm -rf [file.name]_${YEAR}${MONTH}${DAY}T{00..03}*
+rm -rf [file.name]_${YEAR}${MONTH}${DAY}T{05..23}*
 
 for i in `ls -1rt`; do gunzip $i; echo "$i --------------------"; done
 
@@ -49,6 +52,10 @@ mkdir /var/lib/jenkins/cho/uat_c/artifact_logs/TEMP/APIGW_LB_LOGS_TEMP
 cd /var/lib/jenkins/cho/uat_c/artifact_logs/TEMP/APIGW_LB_LOGS_TEMP
 
 aws s3 cp s3://accesslogs-uatc/prefix-rt/AWSLogs/072551541449/elasticloadbalancing/ap-northeast-2/${YEAR}/${MONTH}/${DAY} . --recursive
+
+# 원하는 시간대 설정하여 해당 로그를 추출
+rm -rf [file.name]_${YEAR}${MONTH}${DAY}T{00..03}*
+rm -rf [file.name]_${YEAR}${MONTH}${DAY}T{05..23}*
 
 for i in `ls -1rt`; do gunzip $i; echo "$i --------------------"; done
 
