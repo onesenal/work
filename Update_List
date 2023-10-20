@@ -1,0 +1,16 @@
+1. 그라파나
+    UID 검색(크롬 개발자)
+    Json 파일 변경(UID 적용)
+    알람 설정
+        - Webhok
+        - alert rule
+        - policy cofiguration
+    알람 모듈 파일 변경
+        - 설치(python3, pip3, boto3...)
+        - python3 스크립트
+        - 백그라운드 서버 실행
+        - 파싱 방법
+
+2. Target Group 설정
+
+3. PVC Snapshot(backup)
