@@ -1,0 +1,8 @@
+# 백그라운드에서 실행
+nohup python3 -u [file.name] &
+# 실행 확인 in background
+tail -f nohup.out
+# 프로세스 포트 조회
+lsof -i :5000
+# 프로세스 강제 종료
+sudo kill -9 [PID.value]
