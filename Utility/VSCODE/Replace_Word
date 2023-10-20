@@ -1,0 +1,11 @@
+# 같은 단어 한번에 변경(ex. abc > def 변경시)
+1. 변경하고 싶은 단어(abc)를 드래그 후 Shift + Ctrl + L 
+2. 변경하고자 하는 단어(def)를 기입 또는 붙여넣기(Ctrl + V) 하여 전체 적용
+       단, 붙여넣기 하려면 1 이전에 붙여넣은 구간을 미리 Ctrl + C 
+
+# 여러 파일안에 동일한 단어 한번에 변경(ex. abc > def 변경시)
+1. Shift + Ctrl + h
+2. Search에 변경하고 싶은 단어(abc)를 기입
+3. Replace에 변경하고자 하는 단어(def)를 기입 또는 붙여넣기(Ctrl + V)
+4. Replace 옆에 있는 아이콘 클릭 
+5. Replace 클릭
