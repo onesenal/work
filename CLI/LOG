@@ -1,0 +1,8 @@
+# /var/log/cron
+해당 파일에서 cron이 실행된 것을 확인
+
+# /var/log/syslog & /var/log/messages 
+해당 파일에서 서버의 로그를 확인
+
+# /var/spool/mail/jenkins
+Jenkins 디렉토리와 관련된 로그를 확인
