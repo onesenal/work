@@ -14,7 +14,7 @@ vi .bashrc 명령어를 통해 파일을 생성하면 다음과 같이 파일 �
 
     # 아래에 별칭 기입
     # [예시]
-    alias q='cd .ssh && ssh -i uat.pem ec2-user@172.31.61.152'
+    alias q='cd .ssh && ssh -i ssk_key user_name@**.**.**.**'
     unalias [alias.name]
 
 # alias 적용
