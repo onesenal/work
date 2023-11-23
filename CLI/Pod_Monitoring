@@ -25,3 +25,9 @@ kubectel exec -it [pod.name] -n [namespace.name] -- /bin/bash
     - 컨테이너가 하나가 아닌 여러 개가 있는 파드를 접속하려고 하면 에러 메세지가 발생
     - 에러 메세지에서 컨테이너 명을 확인
 kubectel exec -it [pod.name] -n [namespace.name] -c [container.name] -- /bin/bash
+
+# 파드가 재시작되었을 경우 원인 파악
+kubectel describe [pod.name] -n [namespace.name]
+    - Last State : 상태 표시
+        Reason: 원인 표시
+        Exit Code: 원인 표시
