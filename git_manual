@@ -13,3 +13,7 @@ git pull origin main
 git add [file.name]
 git commit -m "[commit.name]"
 git push -u origin main
+
+# non-fast-forward error
+git push origin main -- force
+    : 강제로 덮어 씌우기
