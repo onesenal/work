@@ -1,0 +1,10 @@
+# User 생성
+sudo useradd -m -g [primarygroup.name] -G [group.name_01], [group.name_02], [group.name_03] [user.name]
+
+# User root 권한 및 비밀번호 입력x 설정
+sudo vi /etc/sudoers
+    :!visudo
+    # User root 권한
+    [user.name] ALL=(ALL)ALL
+    # User 비밀번호 입력x
+    [user.name] ALL=NOPASSWD: ALL
