@@ -1,0 +1,5 @@
+# 줄 편집
+sed "s/^[origin.string]/[change.string]/g" -i /[directory.path]
+s: substitute 약자로써, 패턴을 대체하는 역할
+g: 해당 줄에서 모든 발견된 패턴을 변경
+-i 옵션: 원본 파일 직접 변경
