@@ -1,0 +1,7 @@
+# Use User Data Script
+1. AWS EC2 Console
+2. 해당 EC2 클릭
+3. 우상단 Instance State > EC2 Instance Stop
+4. 우상단 Actions > Instance Setting > Edit User Data
+5. Script 작성 후 Save
+6. 우상단 Instance State > EC2 Instance Start
