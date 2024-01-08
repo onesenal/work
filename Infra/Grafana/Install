@@ -1,0 +1,5 @@
+# Install
+1. wget https://dl.grafana.com/oss/release/grafana-10.1.2-1.x86_64.rpm
+2. sudo yum -y localinstall grafana-10.1.2-1.x86_64.rpm
+3. sudo service grafana-server start
+4. Web에서 설치한 서버의 https://[IP]:3000로 접속 가능
