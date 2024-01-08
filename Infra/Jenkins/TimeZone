@@ -1,0 +1,14 @@
+# TimeZone(User별)
+1. Jenkins Dashboard 접속
+2. People 클릭
+3. 해당 User 클릭
+4. Configure 클릭
+5. User Defined Time Zone > Time Zone 변경 > Apply > Save
+
+# TimeZone(System 설정)
+1. Jenkins Dashboard 접속
+2. Manage Jenkins
+3. Tools and Actions > Script Console
+4. Command 적용
+    System.setProperty('org.apache.commons.jelly.tags.fmt.timeZone', 'Asia/Seoul') 입력
+    Run 클릭
