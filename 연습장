@@ -1,0 +1,20 @@
+NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme1n1         259:0    0  200G  0 disk 
+├vg01-elslog    259:0    0   40G  0 lvm /var/log/elasticsearch   
+├vg01-elsconfig 259:1    0  500M  0 lvm /home/ec2-user/elasticsearch
+└vg01-elsdata   259:2    0  155G  0 lvm 
+nvme0n1         259:1    0   30G  0 disk 
+├nvme0n1p1      259:2    0   30G  0 part / 
+└nvme0n1p128    259:3    0    1M  0 part
+
+sudo lvs
+sudo lvdisplay
+sudo vgdisplay
+
+sudo umount /var/lib/elasticsearch
+
+sudo lvchange -an /dev/vg01/elsdata  # 논리 볼륨 비활성화
+sudo lvchange -ay /dev/vg01/elsdata  # 논리 볼륨 활성화
+sudo mount /dev/vg01/elsdata /var/lib/elasticsearch  # 새로운 마운트 지정
+
+sudo lvchange -p rw /dev/vg01/elsdata # 볼륨 속성 변경
