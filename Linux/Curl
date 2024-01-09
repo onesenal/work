@@ -1,0 +1,5 @@
+# File Upload(Server1 > Server2)
+curl -v -u [id]:[passwd] --upload-file [Sever1.file.path]/[file.name] [URL]/[Server2.file.path]/
+
+# File Download(Server1 > Server2)
+curl -v -u [id]:[passwd] -O [URL]/[Server1.file.path]/[file.name]
