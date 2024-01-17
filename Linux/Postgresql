@@ -1,0 +1,10 @@
+# 접속
+psql --host=[host.name] --port=[port.number] --username=[user.name] -W
+# 유저 생성
+CREATE USER [new_user.name] WITH PASSWORD '[passwd]';
+# 유저 변경
+SET ROLE [user.name];
+# 패스워드 변경
+ALTER USER [user.name] WITH PASSWORD '[passwd]';
+# DB 생성
+CREATE DATABASE [db.name];
