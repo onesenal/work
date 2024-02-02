@@ -1,0 +1,2 @@
+# 서버간 접속
+ssh -i [ssh.key] [user.name]@[Connect to server IP]
