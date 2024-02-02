@@ -1,0 +1,2 @@
+# 서버간 디렉토리 복사
+scp -r [directory name to copy] [user name of the server on which you want to paste directory]@[IP of the server on which you want to paste directory]:[directory path of the server on which you want to paste directory]
