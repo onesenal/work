@@ -1,0 +1,5 @@
+
+
+
+# 인디렉트 한줄씩 증가
+=INDIRECT("[sheet.name!sheet.row]" & ROW() - ROW($[return to specific shell]$[hell.number]) + [increase to number])
