@@ -4,5 +4,7 @@ nohup python3 -u [file.name] &
 tail -f nohup.out
 # 프로세스 포트 조회
 lsof -i :5000
+# 현재 실행중인 모든 프로세스 확인
+ps aux
 # 프로세스 강제 종료
 sudo kill -9 [PID.value]
