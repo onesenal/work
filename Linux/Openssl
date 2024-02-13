@@ -1,0 +1,2 @@
+# 인증서 만료기간 확인
+echo ''|openssl s_client -connect [ip]|openssl x509 -noout -dates
