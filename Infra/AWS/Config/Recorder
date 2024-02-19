@@ -1,0 +1,30 @@
+# AWS Config Recorder
+    AWS Config의 리소스 구성을 관리하는데 사용
+    AWS 리전에서 사용하는 모든 리소스를 기록
+
+# CLI
+aws configservice describe-configuration-recorders 
+{
+    "ConfigurationRecorders": [
+        {
+            "name": "default",
+            "roleARN": "arn:aws:iam::072551541449:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig",
+            "recordingGroup": {
+                "allSupported": true,
+                "includeGlobalResourceTypes": true,
+                "resourceTypes": [],
+                "exclusionByResourceTypes": {
+                    "resourceTypes": []
+                },
+                "recordingStrategy": {
+                    "useOnly": "ALL_SUPPORTED_RESOURCE_TYPES"
+                }
+                # 신규
+                "recordingMode": {
+                    "recordingFrequency": "CONTINUOUS",
+                    "recordingModeOverrides": []                    
+                }
+            }
+        }
+    ]
+}

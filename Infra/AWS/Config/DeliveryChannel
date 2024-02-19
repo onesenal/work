@@ -1,0 +1,21 @@
+# DeliveryChannel
+    AWS 계정의 리전당 DeliveryChannel 하나만 사용 가능
+    AWS Config 변경된 내용을 SNS Service를 사용하여, 알림 기능
+
+# CLI
+aws configservice describe-delivery-channels 
+{
+    "DeliveryChannels": [
+        {
+            "name": "[name]",
+            "s3BucketName": "[s3bucket.name]"
+            # 신규
+            # 파일 저장할 때, 접두사 설정
+            "s3KeyPrefix": "[prefix]"
+            "snsTopicARN": "[arn]"
+            "configSnapshotDeliveryProperties": {
+                "deliveryFrequency": "TwentyFour_Hours"
+            }
+        }
+    ]
+}
