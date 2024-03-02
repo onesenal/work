@@ -1,0 +1,9 @@
+dict = {
+    "name" : "수제비"
+    "book" : ["정보처리기사", "정보처리산업기사", "정보처리기능사", "빅데이터분석기사"],
+    "site" : "www.soojebi.com"
+}
+dict["book"][0] = "정보처리기사 실기"
+# range(시작:종료:스텝) - 종료는 미만 / range(1) = range(0:1:1) = [0]
+for i in range(1);
+    print("book:", dict["book"][i]) 

@@ -1,0 +1,41 @@
+interface Book {
+    void make();
+}
+
+class Gisa1 implements Book {
+    public void make() {
+        System.out.print("필기");
+    }
+}
+
+class Gisa2 implements Book {
+    public void make() {
+        System.out.print("실기");
+    }
+}
+
+class SoojebiFactory{
+    public Book getShape(String bookType){
+        if(bookType == null){
+            return null;
+        }
+        if(bookType == "필기"){
+            return new Gisa1();
+        }
+        else if(bookType == "실기"){
+            return new Gisa2();
+        }
+        return null;
+    }
+}
+
+public class Soojebi{
+    public static void main(String[] args) {
+        SoojebiFactory sf = new SoojebiFactory();
+        System.out.print("정보처리기사");
+        Book b1 = sf.getShape("필기");
+        b1.make();
+        Book b2 = sf.getShape("실기");
+        b2.make();
+    }
+}

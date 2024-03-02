@@ -1,0 +1,36 @@
+class A{
+    String s;
+    A(){
+        System.out.print("A");
+    }
+    A(String s){
+        this.s = s;
+        System.out.print(this.s);
+    }
+    public void fn(){
+        System.out.print("C");
+    }
+}
+# class B extends A : 상속 (A 부모 class, B 자식 class)
+class B extends A{
+    String s;
+    B(){
+        System.out.print("B");
+    }
+    B(String s){
+        super("hello ");
+        this.s = s;
+        System.out.print(this.s);
+    }
+    public void fn(){
+        System.out.print("B");
+    }
+}
+
+class Soojebi{
+    # main : Java 프로그램의 시작점
+    public static void main(String args[]){
+        # B 생성자 호출하여 soojebi 문자열 전달
+        new B("soojebi");
+    }
+}
