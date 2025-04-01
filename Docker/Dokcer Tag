@@ -1,0 +1,1 @@
+docker tag [docker.id] [repository.name:tag]
