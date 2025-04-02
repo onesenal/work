@@ -1,0 +1,2 @@
+# 그룹 제거
+1. gpasswd -d [user.name] [group.name]
