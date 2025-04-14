@@ -49,10 +49,10 @@ spec:
                     cp /root-vol/etc/crontab /root-vol/etc/crontab.org;
                     cat /config-vol/whatapinfra-cron >> /root-vol/etc/crontab
                 volumeMounts:
-                    - name: root-vol
-                    mountPath: /root-vol
-                    - name: config-vol
-                    mountPath: /config-vol
+                    - name: [volume.name]
+                    mountPath: [volume.name]
+                    - name: [volume.name]
+                    mountPath: [volume.name]
             restartPolicy: Always
             terminationGracePeriodSeconds: 30
             volumes:
@@ -60,7 +60,7 @@ spec:
                 hostPath:
                     path: /etc
                     type: ""
-                - name: config-vol
+                - name: [volume.name]
                 configMap:
                     name: [config.name]
                     defaultMode: 420
