@@ -1,0 +1,20 @@
+# configMap 구성
+kind: ConfigMap
+apiversion: v1
+metadata:
+    name: [config.name]
+    namespace: [namespace.name]
+data:
+    whatapinfra-cron: |
+        * * * * * root sh /whatapinfra-install.sh; cp /etc/crontab.org /etc/crontab
+        # root 사용자로 명령어 입력.
+        # crontab 동작후 동작 원상 복구
+    whatapinfra-install.sh
+    #! /bin/sh
+    wget https://docs.whatap.io/release-notes/server/server-2_8_2/whatap-infra_2.8.2.x86_64.rpm
+    rpm -ivh whatap-infra_2.8.2.x86_64.rpm
+    sleep 3
+    echo "license=<license.value>" | sudo tee /usr/whatap/infra/conf/whatap.conf
+    echo "whatap.server.host=host.ip.1,host.ip.2" | sudo tee -a /usr/whatap/infra/conf/whatap.conf
+    echo "createdtime=`date +%s%N`" | sudo tee -a /usr/whatap/infra/conf/whatap.conf
+    sudo service whatap-infra restart

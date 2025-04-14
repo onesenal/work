@@ -1,0 +1,70 @@
+# daemonSet 구성
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+    name: [application.name]
+    namespace: [namespace.name]
+    labels:
+        k8s-app: [label.name]
+spec:
+    revisionHistoryLimit: 10
+    selector:
+        matchLabels:
+            name: [label.name]
+    template:
+        metadata:
+            labels:
+                name: [label.name]
+        spec:
+            containers:
+              - name: busybox
+                # busybox : 
+                1. 이미지가 작아서 Pod가 빠르게 생성되고 리소스를 거의 쓰지 않음.
+                2. 간단한 명령 실행, 네트워크 테스트, 셸 진입 등에 많이 활용.
+                image: busybox
+                imagePullPolicy: IfNotPresent
+                    # imagePullPolicy: IfNotPresent
+                    1. image가 해당 container에 없을 경우만 image를 pull 하는 파라미터
+                command:
+                    - sh
+                    - -c
+                    - sleep infinity
+                volumeMounts:
+                    - name: [volume.name]
+                    mountPath: /[voulme.path]
+
+            dnsPolicy: ClusterFirst
+            # dnsPolicy: ClusterFirst
+            1. CoreDNS 사용 - Cluster 내 서비스 이름 우선 해석.
+            initContainers:
+                - name: [service.name]
+                image: busybox
+                imagePullPolicy: IfNotPresent
+                command:
+                    - sh
+                    - -c
+                    - >
+                    mkdir /root-vol/logs; chmod 777 /root-vol/logs;
+                    cp /config-vol/* /root-vol/;
+                    cp /root-vol/etc/crontab /root-vol/etc/crontab.org;
+                    cat /config-vol/whatapinfra-cron >> /root-vol/etc/crontab
+                volumeMounts:
+                    - name: root-vol
+                    mountPath: /root-vol
+                    - name: config-vol
+                    mountPath: /config-vol
+            restartPolicy: Always
+            terminationGracePeriodSeconds: 30
+            volumes:
+                - name: [volume.name]
+                hostPath:
+                    path: /etc
+                    type: ""
+                - name: config-vol
+                configMap:
+                    name: [config.name]
+                    defaultMode: 420
+        updateStrategy:
+            rollingUpdate:
+            maxUnavailable: 1
+            type: RollingUpdate
